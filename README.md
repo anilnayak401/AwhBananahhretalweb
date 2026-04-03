@@ -12,7 +12,7 @@ Award-level brand website for AWHHBANANAHH cold-pressed juices. Built with Three
 npm start
 ```
 
-Then open [http://localhost:3000](http://localhost:3000)
+Then open https://anilnayak401.github.io/AwhBananahhretalweb/
 
 ## Stack
 
