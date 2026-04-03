@@ -1,0 +1,24 @@
+{
+  "name": "awhhbananahh",
+  "version": "1.0.0",
+  "description": "AWHHBANANAHH — Hyper-visual juice brand website. Pure juice, pure life.",
+  "private": true,
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "npx serve . -p 3000 --no-clipboard",
+    "preview": "npx serve . -p 8080"
+  },
+  "keywords": [
+    "juice",
+    "brand",
+    "website",
+    "three.js",
+    "gsap",
+    "animation"
+  ],
+  "author": "AWHHBANANAHH",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}

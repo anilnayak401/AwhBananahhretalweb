@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AWHHBANANAHH — Six cold-pressed juice flavours. 100% natural, no additives, pure life." />
+  <meta name="theme-color" content="#FF6B00" />
+  <meta property="og:title" content="AWHHBANANAHH — Pure Juice, Pure Life" />
+  <meta property="og:description" content="Six cold-pressed flavours. 100% natural, no additives." />
+  <meta property="og:type" content="website" />
+  <title>AWHHBANANAHH — Pure Juice, Pure Life</title>
+  <!-- Favicons — AB orange on black circle -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="shortcut icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="msapplication-TileColor" content="#FF6B00" />
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+
+  <!-- ══ CURSOR ══ -->
+  <div id="cursor-ring"></div>
+  <div id="cursor-dot"></div>
+  <div id="cursor-label"></div>
+
+  <!-- ══ LOADER ══ -->
+  <div id="loader">
+    <div class="loader-bg-grid"></div>
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <span class="loader-logo">AWHHBANANAHH</span>
+        <div class="loader-logo-glow"></div>
+      </div>
+      <div class="loader-tagline">Pure Juice · Pure Life · Pure Art</div>
+      <div class="loader-bar-track"><div id="loader-fill"></div></div>
+      <div class="loader-meta">
+        <span id="loader-pct">0%</span>
+        <span id="loader-status">Initialising...</span>
+      </div>
+    </div>
+    <div class="loader-corner tl">◤</div>
+    <div class="loader-corner tr">◥</div>
+    <div class="loader-corner bl">◣</div>
+    <div class="loader-corner br">◢</div>
+  </div>
+
+  <!-- ══ NOISE OVERLAY ══ -->
+  <div id="noise"></div>
+
+  <!-- ══ AUDIO ══ -->
+  <div id="audio-widget">
+    <button id="audio-btn" aria-label="Toggle audio">
+      <span class="audio-icon">♪</span>
+      <span class="audio-bars"><i></i><i></i><i></i><i></i></span>
+    </button>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav id="navbar">
+    <a class="nav-logo magnetic" href="#hero">AWHHBANANAHH</a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link magnetic">Home</a></li>
+      <li><a href="#products" class="nav-link magnetic">Flavours</a></li>
+      <li><a href="#story" class="nav-link magnetic">Story</a></li>
+      <li><a href="#ingredients" class="nav-link magnetic">Ingredients</a></li>
+      <li><a href="#reviews" class="nav-link magnetic">Reviews</a></li>
+      <li><a href="#cta" class="nav-cta magnetic">Order Now</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══ -->
+  <div id="mobile-menu">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#products">Flavours</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#ingredients">Ingredients</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#cta">Order Now</a></li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SCENE 1 — HERO
+  ══════════════════════════════════════ -->
+  <section id="hero" class="scene">
+    <!-- Video loop background -->
+    <video id="hero-video" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="hero-loop.mp4" type="video/mp4" />
+    </video>
+    <div id="hero-video-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        <span>100% Natural · Cold Pressed · No Additives</span>
+        <span class="dot"></span>
+      </div>
+      <h1 class="hero-headline">
+        <span class="line line-1">FEEL</span>
+        <span class="line line-2">THE <em class="hero-accent">BURST</em></span>
+      </h1>
+      <p class="hero-sub">Six flavours. One obsession.<br>Pure juice, pure life.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary magnetic" data-cursor="Explore">
+          <span>Explore Flavours</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#story" class="btn-ghost magnetic" data-cursor="Story">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SCENE 2 — FEATURED VISUAL STRIP
+  ══════════════════════════════════════ -->
+  <section id="visual-strip" class="scene scene-strip">
+    <div class="strip-grid">
+      <div class="strip-cell strip-tall">
+        <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=800&q=90" alt="Orange juice" />
+        <div class="strip-label">Solar Burst</div>
+      </div>
+      <div class="strip-col">
+        <div class="strip-cell">
+          <img src="https://images.unsplash.com/photo-1622597467836-f3e6707a5e0b?w=600&q=90" alt="Colourful juices" />
+          <div class="strip-label">Jungle Green</div>
+        </div>
+        <div class="strip-cell">
+          <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=600&q=90" alt="Smoothies" />
+          <div class="strip-label">Citrus Storm</div>
+        </div>
+      </div>
+      <div class="strip-col">
+        <div class="strip-cell">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&q=90" alt="Berry juice" />
+          <div class="strip-label">Berry Riot</div>
+        </div>
+        <div class="strip-cell strip-wide">
+          <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600&q=90" alt="Tropical juice" />
+          <div class="strip-label">Sangria Sun</div>
+        </div>
+      </div>
+    </div>
+    <div class="strip-overlay-text">
+      <span>CRAFTED WITH</span>
+      <span class="accent-text">PASSION</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SCENE 3 — PRODUCTS
+  ══════════════════════════════════════ -->
+  <section id="products" class="scene">
+    <div class="scene-inner">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Collection</p>
+        <h2 class="section-title">Six <span class="accent">Flavours</span><br>One Obsession</h2>
+        <p class="section-desc">Each bottle is a masterpiece — cold-pressed within hours of harvest, bursting with real fruit flavour.</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="Citrus">Citrus</button>
+        <button class="filter-tab" data-filter="Green">Green</button>
+        <button class="filter-tab" data-filter="Berry">Berry</button>
+        <button class="filter-tab" data-filter="Tropical">Tropical</button>
+      </div>
+
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SCENE 4 — STORY
+  ══════════════════════════════════════ -->
+  <section id="story" class="scene scene-story">
+    <div class="story-bg-img">
+      <img src="https://images.unsplash.com/photo-1622597467836-f3e6707a5e0b?w=1600&q=80" alt="" />
+    </div>
+    <div class="story-content">
+      <div class="story-left">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="story-headline">Born from<br><span class="accent">Nature.</span><br>Made for<br><span class="accent">You.</span></h2>
+        <div class="story-scroll-imgs">
+          <div class="story-img-card" data-parallax="0.3">
+            <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&q=90" alt="Juice pour" />
+          </div>
+          <div class="story-img-card story-img-card--offset" data-parallax="0.15">
+            <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&q=90" alt="Orange juice" />
+          </div>
+        </div>
+      </div>
+      <div class="story-right">
+        <div class="story-block">
+          <span class="story-num">01</span>
+          <h3>The Belief</h3>
+          <p>We started AWHHBANANAHH with one simple belief — real fruit should taste like real fruit. No concentrates, no artificial flavours, no shortcuts.</p>
+        </div>
+        <div class="story-block">
+          <span class="story-num">02</span>
+          <h3>The Process</h3>
+          <p>Every bottle is cold-pressed within hours of harvest, locking in vitamins, enzymes, and the kind of flavour that makes you close your eyes.</p>
+        </div>
+        <div class="story-block">
+          <span class="story-num">03</span>
+          <h3>The Source</h3>
+          <p>From sun-drenched citrus groves to tropical dragon fruit farms, we source only the finest ingredients so every sip feels like a moment in paradise.</p>
+        </div>
+        <a href="#cta" class="btn-primary magnetic">
+          <span>Start Your Journey</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SCENE 5 — INGREDIENTS / PROCESS
+  ══════════════════════════════════════ -->
+  <section id="ingredients" class="scene">
+    <div class="scene-inner">
+      <div class="section-header">
+        <p class="section-eyebrow">What's Inside</p>
+        <h2 class="section-title">Pure <span class="accent">Ingredients</span><br>Zero Compromise</h2>
+      </div>
+
+      <div class="ing-layout">
+        <div class="ing-visual">
+          <div class="ing-video-wrap">
+            <video id="ing-video" muted loop playsinline preload="none" aria-hidden="true">
+              <source src="ing-loop.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div class="ing-list">
+          <div class="ing-item" data-color="#FF6B00">
+            <div class="ing-dot" style="background:#FF6B00"></div>
+            <div>
+              <h4>🍊 Citrus Family</h4>
+              <p>Valencia oranges, blood orange, Meyer lemon, grapefruit, tangerine</p>
+            </div>
+          </div>
+          <div class="ing-item" data-color="#2ECC71">
+            <div class="ing-dot" style="background:#2ECC71"></div>
+            <div>
+              <h4>🥝 Green Powerhouse</h4>
+              <p>Kiwi, green apple, spinach, cucumber, celery, wheatgrass</p>
+            </div>
+          </div>
+          <div class="ing-item" data-color="#E74C3C">
+            <div class="ing-dot" style="background:#E74C3C"></div>
+            <div>
+              <h4>🍇 Berry Blend</h4>
+              <p>Pomegranate, grape, raspberry, strawberry, acai, blueberry</p>
+            </div>
+          </div>
+          <div class="ing-item" data-color="#FFD600">
+            <div class="ing-dot" style="background:#FFD600"></div>
+            <div>
+              <h4>🍍 Tropical Mix</h4>
+              <p>Pineapple, mango, passion fruit, dragon fruit, coconut water</p>
+            </div>
+          </div>
+          <div class="ing-item" data-color="#1ABC9C">
+            <div class="ing-dot" style="background:#1ABC9C"></div>
+            <div>
+              <h4>🌿 Wellness Boosters</h4>
+              <p>Ginger, turmeric, spirulina, chia seeds, flaxseed, probiotics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process steps -->
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-icon">🌱</div>
+          <div class="process-line"></div>
+          <h4>Farm Fresh</h4>
+          <p>Sourced within 24hrs of harvest</p>
+        </div>
+        <div class="process-step">
+          <div class="process-icon">❄️</div>
+          <div class="process-line"></div>
+          <h4>Cold Pressed</h4>
+          <p>No heat, no oxidation, max nutrients</p>
+        </div>
+        <div class="process-step">
+          <div class="process-icon">🔬</div>
+          <div class="process-line"></div>
+          <h4>Lab Tested</h4>
+          <p>Every batch quality certified</p>
+        </div>
+        <div class="process-step">
+          <div class="process-icon">📦</div>
+          <div class="process-line"></div>
+          <h4>Eco Packed</h4>
+          <p>100% recyclable glass bottles</p>
+        </div>
+        <div class="process-step">
+          <div class="process-icon">🚀</div>
+          <div class="process-line last"></div>
+          <h4>Fast Delivered</h4>
+          <p>Cold-chain delivery to your door</p>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="gallery-masonry">
+        <div class="gal-item gal-tall">
+          <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&q=90" alt="Orange juice" />
+          <div class="gal-overlay"><span>Solar Burst</span></div>
+        </div>
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1622597467836-f3e6707a5e0b?w=500&q=90" alt="Colourful juices" />
+          <div class="gal-overlay"><span>Jungle Green</span></div>
+        </div>
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&q=90" alt="Berry juice" />
+          <div class="gal-overlay"><span>Berry Riot</span></div>
+        </div>
+        <div class="gal-item gal-wide">
+          <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=800&q=90" alt="Smoothies" />
+          <div class="gal-overlay"><span>Citrus Storm</span></div>
+        </div>
+        <div class="gal-item">
+          <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=500&q=90" alt="Tropical" />
+          <div class="gal-overlay"><span>Sangria Sun</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SCENE 6 — REVIEWS
+  ══════════════════════════════════════ -->
+  <section id="reviews" class="scene scene-dark">
+    <div class="scene-inner">
+      <div class="section-header">
+        <p class="section-eyebrow">What People Say</p>
+        <h2 class="section-title">The <span class="accent">World</span><br>Is Obsessed</h2>
+      </div>
+      <div class="reviews-track" id="reviews-track">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Solar Burst changed my morning routine forever. I can't go back to regular OJ."</p>
+          <div class="review-author">
+            <img src="https://i.pravatar.cc/48?img=1" alt="Sarah K." />
+            <div><strong>Sarah K.</strong><span>Wellness Coach</span></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Berry Riot is the most flavourful juice I've ever had. The colour alone is stunning."</p>
+          <div class="review-author">
+            <img src="https://i.pravatar.cc/48?img=5" alt="Marcus T." />
+            <div><strong>Marcus T.</strong><span>Chef & Food Blogger</span></div>
+          </div>
+        </div>
+        <div class="review-card review-card--featured">
+          <div class="review-stars">★★★★★</div>
+          <p>"I've tried every cold-press brand out there. AWHHBANANAHH is on another level entirely. The Jungle Green is liquid energy."</p>
+          <div class="review-author">
+            <img src="https://i.pravatar.cc/48?img=9" alt="Priya M." />
+            <div><strong>Priya M.</strong><span>Nutritionist</span></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Citrus Storm is my pre-workout ritual. Nothing else comes close."</p>
+          <div class="review-author">
+            <img src="https://i.pravatar.cc/48?img=12" alt="Jake R." />
+            <div><strong>Jake R.</strong><span>Personal Trainer</span></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>"Sangria Sun tastes like a vacation. I order a case every single week."</p>
+          <div class="review-author">
+            <img src="https://i.pravatar.cc/48?img=20" alt="Lena V." />
+            <div><strong>Lena V.</strong><span>Travel Writer</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-nav">
+        <button class="rev-btn" id="rev-prev">←</button>
+        <div class="rev-dots" id="rev-dots"></div>
+        <button class="rev-btn" id="rev-next">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SCENE 7 — CTA (FINAL)
+  ══════════════════════════════════════ -->
+  <section id="cta" class="scene scene-cta">
+    <video id="cta-video" muted loop playsinline preload="none" aria-hidden="true">
+      <source src="cta-loop.mp4" type="video/mp4" />
+    </video>
+    <div id="cta-video-overlay"></div>
+    <div class="cta-inner">
+      <p class="section-eyebrow">Limited Edition Drop</p>
+      <h2 class="cta-headline">
+        TASTE THE<br><span class="accent">EXPLOSION</span>
+      </h2>
+      <p class="cta-sub">Order your first case and get free cold-press delivery.<br>No subscription. No compromise. Just pure juice.</p>
+
+      <div class="cta-product-row" id="cta-product-row"></div>
+
+      <div class="cta-actions">
+        <a href="#" class="btn-primary btn-xl magnetic" data-cursor="Shop">
+          <span>Shop Now — Free Delivery</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn-ghost magnetic">Find a Store Near You</a>
+      </div>
+      <div class="cta-trust">
+        <span>🌿 100% Natural</span>
+        <span>❄️ Cold Pressed</span>
+        <span>🚚 Free Delivery</span>
+        <span>♻️ Eco Packaging</span>
+        <span>⭐ 4.9/5 Rating</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-logo">AWHHBANANAHH</div>
+        <p>Pure juice, pure life. Cold-pressed with love from the world's finest fruits.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link magnetic">IG</a>
+          <a href="#" class="social-link magnetic">TK</a>
+          <a href="#" class="social-link magnetic">YT</a>
+          <a href="#" class="social-link magnetic">TW</a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h5>Products</h5>
+        <a href="#">Solar Burst</a>
+        <a href="#">Jungle Green</a>
+        <a href="#">Berry Riot</a>
+        <a href="#">Citrus Storm</a>
+        <a href="#">Lime Splash</a>
+        <a href="#">Sangria Sun</a>
+      </div>
+      <div class="footer-links-col">
+        <h5>Company</h5>
+        <a href="#">Our Story</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-newsletter">
+        <h5>Stay Fresh</h5>
+        <p>Get new flavour drops and exclusive offers.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" />
+          <button class="magnetic">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AWHHBANANAHH. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Modal -->
+  <div id="product-modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close magnetic">✕</button>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>
